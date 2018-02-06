@@ -40,6 +40,15 @@ class PagesController extends AppController
      */
     public function display(...$path)
     {
+	$this->loadModel('Posts');
+//	$posts = $this->Posts->find('all');
+	$posts = $this->paginate($this->Posts);
+	foreach ($posts as $post)
+	{
+	    $author_name = $this->Posts->Users->get($post->author, $options = ['fields' => 'username']);
+	    $post->set('author_name', $author_name->username);
+	}
+	$this->set('posts', $posts);
         $count = count($path);
         if (!$count) {
             return $this->redirect('/');

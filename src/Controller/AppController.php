@@ -50,5 +50,35 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
+
+
+	$this->loadComponent('Auth', [
+	    'authenticate' => [
+		'Form' => [
+		    'fields' => [
+			'username' => 'email',
+			'password' => 'password'
+		    ]
+		]
+	    ],
+	    'loginAction' => [
+		'controller' => 'Users',
+		'action' => 'login'
+	    ],
+	    // If unauthorized, return
+	    'unathorizedRedirect' => $this->referer()
+	]);
+
+	// Allowed pages without auth
+	$this->Auth->allow(['display', 'view', 'index']);
+
+	// If user is authorized add some path before controllers
+//	$this->Auth->isAuthorized
+    }
+
+    public function beforeFilter(Event $event){
+	if ($this->Auth->user()) {
+	    $this->viewBuilder()->SetLayout('admin');
+	}
     }
 }

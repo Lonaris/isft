@@ -21,258 +21,308 @@ use Cake\Network\Exception\NotFoundException;
 
 $this->layout = false;
 
-if (!Configure::read('debug')) :
-    throw new NotFoundException(
-        'Please replace src/Template/Pages/home.ctp with your own version or re-enable debug mode.'
-    );
-endif;
 
 $cakeDescription = 'CakePHP: the rapid development PHP framework';
 ?>
 <!DOCTYPE html>
-<html>
-<head>
-    <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $cakeDescription ?>
-    </title>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ISFT N° 179 - "Dr. Carlos Pellegrinni"</title>
 
-    <?= $this->Html->meta('icon') ?>
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
-    <?= $this->Html->css('home.css') ?>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
-</head>
-<body class="home">
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/jquery.bxslider.css">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+<body>
 
-<header class="row">
-    <div class="header-image"><?= $this->Html->image('cake.logo.svg') ?></div>
-    <div class="header-title">
-        <h1>Welcome to CakePHP <?= Configure::version() ?> Red Velvet. Build fast. Grow solid.</h1>
-    </div>
-</header>
+  	<!-- Menu bootstrapp -->
+	<nav class="navbar-default" role="presentation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
+				<span class="sr-only">Noticias</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/isft/"><span>ISFT N° 179</span></a>
+			</div>
+			<div class="navbar-collapse collapse">							
+				<div class="menu">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation"><a href="static/historia.html">Institucional</a></li>
+						<li role="presentation"><a href="static/carreras.html">Carreras</a></li>
+						<li role="presentation"><a href="contests">Concursos</a></li>
+						<li role="presentation"><a href="static/requisitos.html">Requisitos</a></li>
+						<li role="presentation"><a href="static/contacto.html">Contacto</a></li>
+      					<li><a href="users/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					</ul>
+				</div>
+			</div>			
+		</div>
+	</nav>
 
-<div class="row">
-    <div class="columns large-12">
-        <div class="ctp-warning alert text-center">
-            <p>Please be aware that this page will not be shown if you turn off debug mode unless you replace src/Template/Pages/home.ctp with your own version.</p>
-        </div>
-        <div id="url-rewriting-warning" class="alert url-rewriting">
-            <ul>
-                <li class="bullet problem">
-                    URL rewriting is not properly configured on your server.<br />
-                    1) <a target="_blank" href="https://book.cakephp.org/3.0/en/installation.html#url-rewriting">Help me configure it</a><br />
-                    2) <a target="_blank" href="https://book.cakephp.org/3.0/en/development/configuration.html#general-configuration">I don't / can't use URL rewriting</a>
-                </li>
-            </ul>
-        </div>
-        <?php Debugger::checkSecurityKeys(); ?>
-    </div>
-</div>
 
-<div class="row">
-    <div class="columns large-6">
-        <h4>Environment</h4>
-        <ul>
-        <?php if (version_compare(PHP_VERSION, '5.6.0', '>=')) : ?>
-            <li class="bullet success">Your version of PHP is 5.6.0 or higher (detected <?= PHP_VERSION ?>).</li>
-        <?php else : ?>
-            <li class="bullet problem">Your version of PHP is too low. You need PHP 5.6.0 or higher to use CakePHP (detected <?= PHP_VERSION ?>).</li>
-        <?php endif; ?>
 
-        <?php if (extension_loaded('mbstring')) : ?>
-            <li class="bullet success">Your version of PHP has the mbstring extension loaded.</li>
-        <?php else : ?>
-            <li class="bullet problem">Your version of PHP does NOT have the mbstring extension loaded.</li>;
-        <?php endif; ?>
+	<!-- Noticias Slider Carousel -->
 
-        <?php if (extension_loaded('openssl')) : ?>
-            <li class="bullet success">Your version of PHP has the openssl extension loaded.</li>
-        <?php elseif (extension_loaded('mcrypt')) : ?>
-            <li class="bullet success">Your version of PHP has the mcrypt extension loaded.</li>
-        <?php else : ?>
-            <li class="bullet problem">Your version of PHP does NOT have the openssl or mcrypt extension loaded.</li>
-        <?php endif; ?>
+  	<div class="container">
+    	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      		<ol class="carousel-indicators">
+        	<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        	<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        	<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      		</ol>
 
-        <?php if (extension_loaded('intl')) : ?>
-            <li class="bullet success">Your version of PHP has the intl extension loaded.</li>
-        <?php else : ?>
-            <li class="bullet problem">Your version of PHP does NOT have the intl extension loaded.</li>
-        <?php endif; ?>
-        </ul>
-    </div>
-    <div class="columns large-6">
-        <h4>Filesystem</h4>
-        <ul>
-        <?php if (is_writable(TMP)) : ?>
-            <li class="bullet success">Your tmp directory is writable.</li>
-        <?php else : ?>
-            <li class="bullet problem">Your tmp directory is NOT writable.</li>
-        <?php endif; ?>
+      		<!-- Wrapper for slides -->
+	      	<div class="carousel-inner">
+	        	<div class="item active">
+	          		<img src="img/9.jpg" alt="" style="width:100%"/>
+	          			<div class="carousel-caption">
+	            			<h2>Promocion de nuestras carreras en Escuelas de Moreno</h2>
+	         			</div>
+	       		</div>
+	        	<div class="item">
+	          		<img src="img/10.jpg" alt="" style="width:100%"/>
+	          			<div class="carousel-caption">
+	            			<h2>Pizza Party hecho por los aumnos de Gastronomia</h2>
+	          			</div>
+	        	</div>
+	        	<div class="item">
+	          		<img src="img/11.jpg" alt="" style="width:100%"/>
+	          			<div class="carousel-caption">
+	            			<h2>Directivos del Instituto</h2>
+	          			</div>
+	        	</div>
+	        	<div class="item">
+	          		<img src="img/12.jpg" alt="" style="width:100%"/>
+	          			<div class="carousel-caption">
+	            			<h2>Comenzaron las Inscripciones</h2>
+	          			</div>
+	        	</div>
+	      	</div>
 
-        <?php if (is_writable(LOGS)) : ?>
-            <li class="bullet success">Your logs directory is writable.</li>
-        <?php else : ?>
-            <li class="bullet problem">Your logs directory is NOT writable.</li>
-        <?php endif; ?>
+      		<!-- Controls -->
+      		<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    			<span class="glyphicon glyphicon-chevron-left"></span>
+      		</a>
+      		<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        		<span class="glyphicon glyphicon-chevron-right"></span>
+      		</a>
+    	</div>
+  	</div>
 
-        <?php $settings = Cache::getConfig('_cake_core_'); ?>
-        <?php if (!empty($settings)) : ?>
-            <li class="bullet success">The <em><?= $settings['className'] ?>Engine</em> is being used for core caching. To change the config edit config/app.php</li>
-        <?php else : ?>
-            <li class="bullet problem">Your cache is NOT working. Please check the settings in config/app.php</li>
-        <?php endif; ?>
-        </ul>
-    </div>
-    <hr />
-</div>
 
-<div class="row">
-    <div class="columns large-6">
-        <h4>Database</h4>
-        <?php
-        try {
-            $connection = ConnectionManager::get('default');
-            $connected = $connection->connect();
-        } catch (Exception $connectionError) {
-            $connected = false;
-            $errorMsg = $connectionError->getMessage();
-            if (method_exists($connectionError, 'getAttributes')) :
-                $attributes = $connectionError->getAttributes();
-                if (isset($errorMsg['message'])) :
-                    $errorMsg .= '<br />' . $attributes['message'];
-                endif;
-            endif;
-        }
-        ?>
-        <ul>
-        <?php if ($connected) : ?>
-            <li class="bullet success">CakePHP is able to connect to the database.</li>
-        <?php else : ?>
-            <li class="bullet problem">CakePHP is NOT able to connect to the database.<br /><?= $errorMsg ?></li>
-        <?php endif; ?>
-        </ul>
-    </div>
-    <div class="columns large-6">
-        <h4>DebugKit</h4>
-        <ul>
-        <?php if (Plugin::loaded('DebugKit')) : ?>
-            <li class="bullet success">DebugKit is loaded.</li>
-        <?php else : ?>
-            <li class="bullet problem">DebugKit is NOT loaded. You need to either install pdo_sqlite, or define the "debug_kit" connection name.</li>
-        <?php endif; ?>
-        </ul>
-    </div>
-    <hr />
-</div>
 
-<div class="row">
-    <div class="columns large-6">
-        <h3>Editing this Page</h3>
-        <ul>
-            <li class="bullet cutlery">To change the content of this page, edit: src/Template/Pages/home.ctp.</li>
-            <li class="bullet cutlery">You can also add some CSS styles for your pages at: webroot/css/.</li>
-        </ul>
-    </div>
-    <div class="columns large-6">
-        <h3>Getting Started</h3>
-        <ul>
-            <li class="bullet book"><a target="_blank" href="https://book.cakephp.org/3.0/en/">CakePHP 3.0 Docs</a></li>
-            <li class="bullet book"><a target="_blank" href="https://book.cakephp.org/3.0/en/tutorials-and-examples/bookmarks/intro.html">The 15 min Bookmarker Tutorial</a></li>
-            <li class="bullet book"><a target="_blank" href="https://book.cakephp.org/3.0/en/tutorials-and-examples/blog/blog.html">The 15 min Blog Tutorial</a></li>
-            <li class="bullet book"><a target="_blank" href="https://book.cakephp.org/3.0/en/tutorials-and-examples/cms/installation.html">The 15 min CMS Tutorial</a></li>
-        </ul>
-    </div>
-</div>
+  	<!-- Seccion mas noticias - Bootstrapp -->
 
-<div class="row">
-    <div class="columns large-12 text-center">
-        <h3 class="more">More about Cake</h3>
-        <p>
-            CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Front Controller and MVC.<br />
-            Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
-        </p>
-    </div>
-    <hr/>
-</div>
+	<div class="container">
+		<div class="row blog-row">
+		   	<div class="jumbotron">
+				<h1>Mas Noticias</h1>
+			</div>
+<!-- acá arrancan los posts -->
+	<?php foreach($posts as $post):	?>
+	<div class="col-md-12 col-sm-12 col-xs-12 margin_bottom30">
+		<a href="#">
+			<img class="img-responsive center-block" src=" <?= h($post->thumbnail) ?>" width=100% height="250">
+		</a>
+		<div class="blog-content bg-white">
+			<h3><?= h($post->title) ?></h3>
+			<p><?= h($post->content) ?></p>
+			<p><span>Compartir: : 
+			<a href="javascript::;"><i class="fa fa-facebook margin_left10" aria-hidden="true"></i></a>
+			<a href="javascript::;"><i class="fa fa-twitter margin_left10" aria-hidden="true"></i></a>
+		 	</span> 
+			<span class="pull-right">Subido por : <strong> <?= h($post->author_name) ?></strong></span> </p>
+		</div>
+		<hr>
+	</div>
+	<?php endforeach; ?>
+	<script src="https://use.fontawesome.com/1dec14be15.js"></script>
 
-<div class="row">
-    <div class="columns large-4">
-        <i class="icon support">P</i>
-        <h3>Help and Bug Reports</h3>
-        <ul>
-            <li class="bullet cutlery">
-                <a href="irc://irc.freenode.net/cakephp">irc.freenode.net #cakephp</a>
-                <ul><li>Live chat about CakePHP</li></ul>
-            </li>
-            <li class="bullet cutlery">
-                <a href="http://cakesf.herokuapp.com/">Slack</a>
-                <ul><li>CakePHP Slack support</li></ul>
-            </li>
-            <li class="bullet cutlery">
-                <a href="https://github.com/cakephp/cakephp/issues">CakePHP Issues</a>
-                <ul><li>CakePHP issues and pull requests</li></ul>
-            </li>
-            <li class="bullet cutlery">
-                <a href="http://discourse.cakephp.org/">CakePHP Forum</a>
-                <ul><li>CakePHP official discussion forum</li></ul>
-            </li>
-        </ul>
-    </div>
-    <div class="columns large-4">
-        <i class="icon docs">r</i>
-        <h3>Docs and Downloads</h3>
-        <ul>
-            <li class="bullet cutlery">
-                <a href="https://api.cakephp.org/3.0/">CakePHP API</a>
-                <ul><li>Quick Reference</li></ul>
-            </li>
-            <li class="bullet cutlery">
-                <a href="https://book.cakephp.org/3.0/en/">CakePHP Documentation</a>
-                <ul><li>Your Rapid Development Cookbook</li></ul>
-            </li>
-            <li class="bullet cutlery">
-                <a href="https://bakery.cakephp.org">The Bakery</a>
-                <ul><li>Everything CakePHP</li></ul>
-            </li>
-            <li class="bullet cutlery">
-                <a href="https://plugins.cakephp.org">CakePHP plugins repo</a>
-                <ul><li>A comprehensive list of all CakePHP plugins created by the community</li></ul>
-            </li>
-            <li class="bullet cutlery">
-                <a href="https://github.com/cakephp/">CakePHP Code</a>
-                <ul><li>For the Development of CakePHP Git repository, Downloads</li></ul>
-            </li>
-            <li class="bullet cutlery">
-                <a href="https://github.com/FriendsOfCake/awesome-cakephp">CakePHP Awesome List</a>
-                <ul><li>A curated list of amazingly awesome CakePHP plugins, resources and shiny things.</li></ul>
-            </li>
-            <li class="bullet cutlery">
-                <a href="https://www.cakephp.org">CakePHP</a>
-                <ul><li>The Rapid Development Framework</li></ul>
-            </li>
-        </ul>
-    </div>
-    <div class="columns large-4">
-        <i class="icon training">s</i>
-        <h3>Training and Certification</h3>
-        <ul>
-            <li class="bullet cutlery">
-                <a href="https://cakefoundation.org/">Cake Software Foundation</a>
-                <ul><li>Promoting development related to CakePHP</li></ul>
-            </li>
-            <li class="bullet cutlery">
-                <a href="https://training.cakephp.org/">CakePHP Training</a>
-                <ul><li>Learn to use the CakePHP framework</li></ul>
-            </li>
-            <li class="bullet cutlery">
-                <a href="https://certification.cakephp.org/">CakePHP Certification</a>
-                <ul><li>Become a certified CakePHP developer</li></ul>
-            </li>
-        </ul>
-    </div>
-</div>
 
-</body>
+
+	<!-- Carreras -->
+
+	<div class="jumbotron">
+		<h1>Encontrá tu carrera</h1>
+		<p>El espíritu del Instituto Superior es establecer una articulación entre el proceso de enseñanza y la sociedad actual, ya sea hacia la vinculación en lo laboral como hacia la capacitación académica que habilite la continuidad en carreras universitarias.<br>
+		</p>
+	</div>
+	<section class="box">
+		<div class="container">
+			<div class="row">				
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+						<div class="services">
+							<div class="icons">
+								<img src="img/1.jpg" alt="" style="width:100%"/>
+							</div>
+							<h4>Administracion General</h4>	
+							<p>Duración: 3 Años</p>
+							<a href="static/carreras.html">Más Información</a>
+						</div>
+					</div>
+					<hr>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.8s">
+						<div class="services">
+							<div class="icons">
+								<img src="img/4.jpg" alt="" style="width:100%"/>
+							</div>
+							<h4>Análisis de Sistemas</h4>	
+							<p>Duración: 3 Años</p>
+							<a href="static/carreras.html">Más Información</a>
+						</div>
+					</div>
+					<hr>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.2s">
+						<div class="services">											<div class="icons">
+								<img src="img/6.jpg" alt="" style="width:100%"/>
+							</div>
+							<h4>Automatización, Control y Robótica</h4>
+							<p>Duración: 3 Años</p>
+							<a href="static/carreras.html">Más Información</a>							
+						</div>
+					</div>
+					<hr>
+				</div>
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.6s">
+						<div class="services">											<div class="icons">
+								<img src="img/3.jpg" alt="" style="width:100%"/>
+							</div>
+							<h4>Servicios Gastronómicos</h4>
+							<p>Duración: 3 Años</p>
+							<a href="static/carreras.html">Más Información</a>
+						</div>						
+					</div>
+					<hr>
+				</div>
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="2.0s">
+						<div class="services">											<div class="icons">
+								<img src="img/7.jpg" alt="" style="width:100%"/>
+							</div>
+							<h4>Industria Textil e Indumentaria</h4>
+							<p>Duración: 3 Años</p>
+							<a href="static/carreras.html">Más Información</a>							
+						</div>
+					</div>
+					<hr>
+				</div>
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="2.4s">
+						<div class="services">											<div class="icons">
+								<img src="img/5.jpg" alt="" style="width:100%"/>
+							</div>
+							<h4>Logística</h4>
+							<p>Duración: 3 Años</p>
+							<a href="static/carreras.html">Más Información</a>							
+						</div>
+					</div>
+					<hr>
+				</div>
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="2.8s">
+						<div class="services">											<div class="icons">
+								<img src="img/8.jpg" alt="" style="width:100%"/>
+							</div>
+							<h4>Turismo</h4>
+							<p>Duración: 3 Años</p>
+							<a href="static/carreras.html">Más Información</a>					
+						</div>
+					</div>
+					<hr>
+				</div>
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="3.2s">
+						<div class="services">											<div class="icons">
+								<img src="img/2.jpg" alt="" style="width:100%"/>
+							</div>
+							<h4>Higiene y Seguridad en el trabajo</h4>
+							<p>Duración: 3 Años</p>
+							<a href="static/carreras.html">Más Información</a>							
+						</div>
+					</div>
+					<hr>
+				</div>					
+			</div>
+		</div>
+	</section>
+
+	
+
+	<!-- Comienzo del pie de pagina -->
+	<footer>
+		<div class="inner-footer">
+			<div class="container">
+				<div class="row-align-items-center">
+					<div class="col-md-4 f-about">
+						<h3 class="widgetheading">ISFT N° 179</h3>
+						<p>Sede Central</p>
+						<p> Martín Fierro 599</p>
+						<p>Entre Tucumán y Concejal Rosset</p>
+						<p>Moreno - Pcia. de Buenos Aires</p>						
+					</div>
+					<div class="col-md-4 f-contact">
+						<h3 class="widgetheading">Contacto</h3>
+						<a href="#"><p><i class="fa fa-envelope"></i>E-mail: secretaria179@gmail.com</p></a>
+						<p><i class="fa fa-phone"></i> (0237) 466-7020</p>
+					</div>
+					<div class="col-md-4 l-posts">
+						<h3 class="widgetheading">Links de Interés</h3>		
+						<li><a href="https://www.facebook.com/ISFT179/">Seguinos en Facebook</a></li>
+						<li><a href="http://progresar.anses.gob.ar/">Plan PRO.GRE.SAR</a></li>
+						<li><a href="http://educacion.gob.ar/ministerio-de-educacion">Ministerio de Educación</a></li>
+						<li><a href="#">C.A.I</a></li>
+						<li><a href="#">Documentación</a></li>				
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<div class="last-div">
+			<div class="container-fluid">
+				<div class="row-fluid">					
+					<div class="copyright">
+						© 2017 Ramayo - Coronel - Maidana - Ferrin | ISFT N° 179 - "Dr. Carlos Pellegrini"
+					</div>
+				</div>
+			</div>
+		</div>		
+	</footer>
+
+	<!-- Final del pie de pagina -->
+	
+
+	<!-- Scripts de Bootstrapp -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.bxslider.min.js"></script>
+	<script src="js/jquery.isotope.min.js"></script>
+	<script src="js/fancybox/jquery.fancybox.pack.js"></script>
+	<script src="js/functions.js"></script>
+	<script>
+	wow = new WOW(
+	 {
+	
+		}	) 
+		.init();
+	</script>
+  </body>
 </html>

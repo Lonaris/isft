@@ -18,33 +18,41 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <!DOCTYPE html>
 <html>
 <head>
+<!--
+    <?= $this->Html->charset() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <?= $cakeDescription ?>:
+        <?= $this->fetch('title') ?>
+    </title>
+    <?= $this->Html->meta('icon') ?>
+
+    <?= $this->Html->css('base.css') ?>
+    <?= $this->Html->css('cake.css') ?>
+
+    <?= $this->fetch('meta') ?>
+    <?= $this->fetch('css') ?>
+    <?= $this->fetch('script') ?>
+-->
 
 <!-- ACA EMPIEZA MI BARDO LINDO :D -->
 
-	<meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>ISFT N° 179 - "Dr. Carlos Pellegrinni"</title> <!-- Bootstrap --> <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/jquery.bxslider.css">
-	<link href="css/style.css" rel="stylesheet">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+		<meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>ISFT N° 179 - "Dr. Carlos Pellegrinni"</title> <!-- Bootstrap --> <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/animate.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/jquery.bxslider.css">
+		<link href="css/style.css" rel="stylesheet">
+	
+	<!-- Bootstrap -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../css/animate.css">
 	<link rel="stylesheet" href="../css/font-awesome.min.css">
 	<link rel="stylesheet" href="../css/jquery.bxslider.css">
 	<link href="../css/style.css" rel="stylesheet">
-    <script src="../js/jquery-2.1.1.min.js"></script>
-    <!-- Incluye todos los complementos compilados (a continuación) o incluye archivos individuales según sea necesario -->
-    <script src="../js/bootstrap.min.js"></script>
-	<script src="../js/wow.min.js"></script>
-	<script src="../js/jquery.easing.1.3.js"></script>
-	<script src="../js/jquery.bxslider.min.js"></script>
-	<script src="../js/jquery.isotope.min.js"></script>
-	<script src="../js/fancybox/jquery.fancybox.pack.js"></script>
-	<script src="../js/functions.js"></script>
 
 
 </head>
 <body>
-	<!-- Menu Bootstrap -->
 	<nav class="navbar-default" role="presentation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -59,24 +67,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 			<div class="navbar-collapse collapse">							
 				<div class="menu">
 					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation">
-							<?= $this->Html->link('Institucional', '/pages/historia') ?>
-						</li>
-						<li role="presentation">	
-							<?= $this->Html->link('Carreras', '/pages/carreras') ?>
-						</li>
-						<li role="presentation">
-							<?= $this->Html->link('Concursos', '/contests') ?>
-						</li>
-						<li role="presentation">
-							<?= $this->Html->link('Requisitos', '/pages/requisitos') ?>
-						</li>
-						<li role="presentation">
-							<?= $this->Html->link('Contacto', '/pages/contacto') ?>
-						</li>
-      					<li>
-							<?= $this->Html->link('Login', '/users/login') ?>
-						</li>
+						<li role="presentation"><a href="static/historia.html">Institucional</a></li>
+						<li role="presentation"><a href="static/carreras.html">Carreras</a></li>
+						<li role="presentation"><a href="static/concursos.html">Concursos</a></li>
+						<li role="presentation"><a href="static/requisitos.html">Requisitos</a></li>
+						<li role="presentation"><a href="static/contacto.html">Contacto</a></li>
+      					<li><a href="static/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</ul>
 				</div>
 			</div>			

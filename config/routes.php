@@ -43,6 +43,14 @@ use Cake\Routing\Route\DashedRoute;
  */
 Router::defaultRouteClass(DashedRoute::class);
 
+//Router::connect('/admin/:controller/:action/*', array('action' => null, 'prefix' => 'admin', 'admin' => true, 'layout' => 'admin' ));
+
+Router::connect('/admin/users', array('controller' => 'users', 'action' => 'index', 'layout' => 'admin'));
+
+//Router::connect('/admin', array('controller' => 'users', 'action' => 'index', 'admin' => true, 'layout' => 'admin'));
+
+//Router::connect('/admin', array('controller' => 'users', 'action' => 'index','add', 'admin' => true,'prefix' => 'admin','layout' => 'admin'));
+
 Router::scope('/', function (RouteBuilder $routes) {
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
