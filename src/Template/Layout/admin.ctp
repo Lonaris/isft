@@ -14,6 +14,31 @@
  */
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ISFT N° 179 - "Dr. Carlos Pellegrinni"</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/jquery.bxslider.css">
+		<link href="css/style.css" rel="stylesheet">
+
+
+	<!-- Scripts de Bootstrapp -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.bxslider.min.js"></script>
+	<script src="js/jquery.isotope.min.js"></script>
+	<script src="js/fancybox/jquery.fancybox.pack.js"></script>
+	<script src="js/functions.js"></script>
 <!-- ACA EMPIEZA MI BARDO LINDO :D -->
 		<meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>ISFT N° 179 - "Dr. Carlos Pellegrinni"</title> <!-- Bootstrap --> <link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/animate.css">
@@ -40,7 +65,7 @@
 						<li role="presentation">
 							<?= $this->Html->link('Institucional', '/pages/historia') ?>
 						</li>
-						<li role="presentation">
+						<li role="presentation">	
 							<?= $this->Html->link('Carreras', '/pages/carreras') ?>
 						</li>
 						<li role="presentation">
@@ -53,7 +78,7 @@
 							<?= $this->Html->link('Contacto', '/pages/contacto') ?>
 						</li>
       					<li>
-						    <?= $this->Html->link(__('Admin'), ['controller' => 'users', 'action' => 'index']) ?>
+							<?= $this->Html->link('Login', '/users/login') ?>
 						</li>
 					</ul>
 				</div>
@@ -62,22 +87,31 @@
 	</nav>
 
     <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-	            <div class="col-sm-2">
+    <div class="navbar-nav navbar-sidenav">
+	            <div class="col-sm-3">
 	                <ul class="nav nav-pills brand-pills nav-stacked" role="tablist">
         
-			    <li role="presentation" class="brand-nav"><?= $this->Html->link(__('Visitar Sitio'), '/' ) ?></li>
-			    <li role="presentation" class="brand-nav"><?= $this->Html->link(__('Publicaciones'), ['controller' => 'posts', 'action' => 'index']) ?></li>
-			    <li role="presentation" class="brand-nav"><?= $this->Html->link(__('Usuarios'), ['controller' => 'users', 'action' => 'index']) ?></li>
-			    <li role="presentation" class="brand-nav"><?= $this->Html->link(__('Concursos'), ['controller' => 'contests', 'action' => 'index']) ?></li>
-			    <li role="presentation" class="brand-nav"><?= $this->Html->link(__('Salir'), ['controller' => 'users', 'action' => 'logout']) ?></li>
+			    <li role="presentation" class="brand-nav">
+					<?= $this->Html->link(__('Visitar Sitio'), '/' ) ?>
+				</li>
+			    <li role="presentation" class="brand-nav">
+					<?= $this->Html->link(__('Publicaciones'), ['controller' => 'posts', 'action' => 'index']) ?>
+				</li>
+			    <li role="presentation" class="brand-nav">
+					<?= $this->Html->link(__('Usuarios'), ['controller' => 'users', 'action' => 'index']) ?>
+				</li>
+			    <li role="presentation" class="brand-nav">
+					<?= $this->Html->link(__('Concursos'), ['controller' => 'contests', 'action' => 'index']) ?>
+				</li>
+			    <li role="presentation" class="brand-nav">
+					<?= $this->Html->link(__('Salir'), ['controller' => 'users', 'action' => 'logout']) ?>
+				</li>
 	                </ul>
 	            </div>
-
+	</div>
 	<div class="col-sm-3">
         <?= $this->fetch('content') ?>
 	</div>
-    </div>
 	<!-- Comienzo del pie de pagina -->
 	<footer>
 		<div class="inner-footer">
@@ -118,14 +152,4 @@
 		</div>		
 	</footer>
 </body>
-
-	<!-- Scripts de Bootstrapp -->
-    <script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/wow.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.bxslider.min.js"></script>
-	<script src="js/jquery.isotope.min.js"></script>
-	<script src="js/fancybox/jquery.fancybox.pack.js"></script>
-	<script src="js/functions.js"></script>
 </html>
