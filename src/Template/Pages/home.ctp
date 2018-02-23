@@ -24,7 +24,6 @@ use Cake\Network\Exception\NotFoundException;
 ?>
 
 	<!-- Noticias Slider Carousel -->
-
   	<div class="container">
     	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       		<ol class="carousel-indicators">
@@ -83,12 +82,10 @@ use Cake\Network\Exception\NotFoundException;
 <!-- acá arrancan los posts -->
 	<?php foreach($posts as $post):	?>
 	<div class="col-md-12 col-sm-12 col-xs-12 margin_bottom30">
-		<a href="#">
-			<img class="img-responsive center-block" src=" <?= h($post->thumbnail) ?>" width=100% height="250">
-		</a>
 		<div class="blog-content bg-white">
 			<h3><?= h($post->title) ?></h3>
 			<p><?= h($post->content) ?></p>
+			<?= $this->Html->link(__('Continuar leyendo...'), ['controller' => 'posts', 'action' => 'view', $post->id]) ?>
 			<p><span>Compartir: : 
 			<a href="javascript::;"><i class="fa fa-facebook margin_left10" aria-hidden="true"></i></a>
 			<a href="javascript::;"><i class="fa fa-twitter margin_left10" aria-hidden="true"></i></a>
@@ -99,8 +96,6 @@ use Cake\Network\Exception\NotFoundException;
 	</div>
 	<?php endforeach; ?>
 	<script src="https://use.fontawesome.com/1dec14be15.js"></script>
-
-
 
 	<!-- Carreras -->
 
@@ -215,20 +210,3 @@ use Cake\Network\Exception\NotFoundException;
 			</div>
 		</div>
 	</section>
-
-	<!-- Scripts de Bootstrapp -->
-    <script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/wow.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.bxslider.min.js"></script>
-	<script src="js/jquery.isotope.min.js"></script>
-	<script src="js/fancybox/jquery.fancybox.pack.js"></script>
-	<script src="js/functions.js"></script>
-	<script>
-	wow = new WOW(
-	 {
-	
-		}	) 
-		.init();
-	</script>
