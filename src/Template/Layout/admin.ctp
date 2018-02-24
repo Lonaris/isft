@@ -34,8 +34,8 @@
     <?= $this->Flash->render() ?>
     <div class="navbar-nav navbar-sidenav">
     	<div class="col-sm-3">
-	    	<ul class="nav nav-pills brand-pills nav-stacked" role="tablist">
-        		<li role="presentation" class="brand-nav">
+	    	<ul class="nav" role="tablist">
+        		<li role="" class="">
 					<?= $this->Html->link(__('Visitar Sitio'), '/' ) ?>
 				</li>
 			    <li role="presentation" class="brand-nav">
@@ -53,9 +53,19 @@
 			</ul>
 		</div>
 	</div>
-	<div class="col-sm-3">
-        <?= $this->fetch('content') ?>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-3 collapse show" id="sidebar">
+				<h2>I'm a sidebar"</h2>
+			</nav>
+			<main class="col-md-9">
+				<i class="fa fa-times" data-toggle="collapse" data-target="#sidebar" aria-hidden="true"></i>
+			</main>
+		</div>
 	</div>
+
+    <?= $this->fetch('content') ?>
 	<?= $this->element('footer') ?>
 </body>
 </html>
