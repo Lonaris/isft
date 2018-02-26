@@ -12,7 +12,7 @@ use App\Controller\AppController;
  */
 class PostsController extends AppController
 {
-
+	public $helpers = array('Froala.Froala');
     /**
      * Index method
      *
@@ -67,6 +67,7 @@ class PostsController extends AppController
         }
         $this->set(compact('post'));
         $this->set('_serialize', ['post']);
+		
     }
 
     /**

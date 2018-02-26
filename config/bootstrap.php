@@ -219,3 +219,4 @@ Plugin::load('BootstrapUI');
 
 Plugin::load('Crud');
 
+Plugin::load('Froala');

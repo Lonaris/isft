@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cace5f3f3263aa0e97daa4be2e879735",
-    "content-hash": "026ad6621e7ae3f941cc11e4c743df3d",
+    "hash": "41a287e66664ded3186387b63a64d2e4",
+    "content-hash": "54f6b8916468b2f4ff5e39863e2172a1",
     "packages": [
         {
             "name": "aura/intl",
@@ -290,6 +290,54 @@
             "time": "2017-03-21 13:48:47"
         },
         {
+            "name": "fortawesome/font-awesome",
+            "version": "v4.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FortAwesome/Font-Awesome.git",
+                "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/a8386aae19e200ddb0f6845b5feeee5eb7013687",
+                "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687",
+                "shasum": ""
+            },
+            "require-dev": {
+                "jekyll": "1.0.2",
+                "lessc": "1.4.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.6.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OFL-1.1",
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Gandy",
+                    "email": "dave@fontawesome.io",
+                    "homepage": "http://twitter.com/davegandy",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The iconic font and CSS framework",
+            "homepage": "http://fontawesome.io/",
+            "keywords": [
+                "FontAwesome",
+                "awesome",
+                "bootstrap",
+                "font",
+                "icon"
+            ],
+            "time": "2016-10-24 15:52:54"
+        },
+        {
             "name": "friendsofcake/bootstrap-ui",
             "version": "1.2.1",
             "source": {
@@ -413,6 +461,63 @@
                 "update"
             ],
             "time": "2017-08-30 18:37:42"
+        },
+        {
+            "name": "froala/wysiwyg-cake",
+            "version": "2.7.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/froala/wysiwyg-cake.git",
+                "reference": "7660cc1ed1fa1d618b43fef356cf37cb6dcf18f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/froala/wysiwyg-cake/zipball/7660cc1ed1fa1d618b43fef356cf37cb6dcf18f5",
+                "reference": "7660cc1ed1fa1d618b43fef356cf37cb6dcf18f5",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": ">=3.3.2 <4.0.0",
+                "fortawesome/font-awesome": ">=4.4.0",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Froala\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Froala Labs",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A beautiful jQuery WYSIWYG text editor based on HTML5 technology. Cross browser, with mobile support, high performance and Retina Ready modern design.",
+            "homepage": "https://www.froala.com/wysiwyg-editor",
+            "keywords": [
+                "editor",
+                "froala",
+                "froala cake php 3",
+                "html",
+                "javascript",
+                "jquery",
+                "jquery-plugin",
+                "rich editor",
+                "rich text editor",
+                "rte",
+                "text",
+                "wysiwyg",
+                "wysiwyg editor"
+            ],
+            "time": "2018-02-02 15:39:05"
         },
         {
             "name": "josegonzalez/dotenv",
