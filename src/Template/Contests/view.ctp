@@ -4,17 +4,7 @@
  * @var \App\Model\Entity\Contest $contest
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Contest'), ['action' => 'edit', $contest->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Contest'), ['action' => 'delete', $contest->id], ['confirm' => __('Are you sure you want to delete # {0}?', $contest->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Contests'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Contest'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="contests view large-9 medium-8 columns content">
-    <h3><?= h($contest->id) ?></h3>
+<div class="container">
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Carrera') ?></th>

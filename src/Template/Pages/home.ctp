@@ -84,7 +84,7 @@ use Cake\Network\Exception\NotFoundException;
 	<div class="col-md-12 col-sm-12 col-xs-12 margin_bottom30">
 		<div class="blog-content bg-white">
 			<h3><?= h($post->title) ?></h3>
-			<p><?= h($post->content) ?></p>
+			<?= $post->content ?>
 			<?= $this->Html->link(__('Continuar leyendo...'), ['controller' => 'posts', 'action' => 'view', $post->id]) ?>
 			<p><span>Compartir: : 
 			<a href="javascript::;"><i class="fa fa-facebook margin_left10" aria-hidden="true"></i></a>

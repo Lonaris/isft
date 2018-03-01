@@ -36,7 +36,6 @@
                                 <div class="col-xs-2" style=""><?= h($contest->fecha) ?></div>
                                 <div class="col-xs-2" style=""><?= h($contest->ganador) ?></div>
 				<div class="col-xs-2" style="">
-                    <?= $this->Html->link(__('Ver'), ['action' => 'view', $contest->id]) ?>
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $contest->id]) ?>
                     <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $contest->id], ['confirm' => __('Está seguro de que quiere borrar "{0}"?', $contest->materia)]) ?>
 

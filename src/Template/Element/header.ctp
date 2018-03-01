@@ -25,7 +25,7 @@
 						<?= $this->Html->link('Requisitos', '/pages/requisitos') ?>
 					</li>
 					<li role="presentation">
-						<?= $this->Html->link('Contacto', '/pages/contacto') ?>
+						<?= $this->Html->link('Ubicacion', '/pages/contacto') ?>
 					</li>
      					<li>
 						<?= $this->Html->link('Login', '/users/login') ?>

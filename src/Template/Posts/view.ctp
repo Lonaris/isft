@@ -4,15 +4,11 @@
  * @var \App\Model\Entity\Post $post
  */
 ?>
-<div class="row blog-row">
-	<div class="col-md-8">
-		<img src="<?= h($post->thumbnail) ?>" style="width:100%">
+<div class="container clearfix">
+		<img class="img-responsive img-thumbnail center-block" src="<?= h($post->thumbnail) ?>" >
 	    <h3><?= h($post->title) ?></h3>
     	    <?= $this->Text->autoParagraph(h($post->content)); ?>
-	    <?= $this->Number->format($post->id) ?>
-	    <?= h($post->author_name) ?>
-	    <?= h($post->created) ?>
-	    <?= h($post->updated) ?>
-	</div>
+	    <div> Autor: <?= h($post->author_name) ?> </div>
+	    <div> Publicado el <?= h($post->created) ?> </div>
 </div>
 <div class="clearfix"></div>
