@@ -4,14 +4,14 @@
  * @var \App\Model\Entity\Contest[]|\Cake\Collection\CollectionInterface $contests
  */
 ?>
-<div class="breadcrumb">
+<div class="breadcrumb col-sm-8 center-block">
 	<h2>Concursos</h2>
 </div>
 
 <!-- Esto es lo nuevo que estoy armando -->
-<div id="concursos" class="container">
+<div class="container">
     <div class="row">
-        <div class="col-xs-10" style="">
+        <div class="col-xs-12">
             <div class="panel panel-default list-group-panel">
                 <div class="panel-body">
 
@@ -35,12 +35,10 @@
                                 <div class="col-xs-3" style=""><?= h($contest->materia) ?></div>
                                 <div class="col-xs-2" style=""><?= h($contest->fecha) ?></div>
                                 <div class="col-xs-2" style=""><?= h($contest->ganador) ?></div>
-				<div class="col-xs-2" style="">
-                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $contest->id]) ?>
-                    <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $contest->id], ['confirm' => __('Está seguro de que quiere borrar "{0}"?', $contest->materia)]) ?>
-
-				</div>
-
+								<div class="col-xs-2" style="">
+               				    	<?= $this->Html->link(__('Editar'), ['action' => 'edit', $contest->id]) ?>
+									<?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $contest->id], ['confirm' => __('Está seguro de que quiere borrar "{0}"?', $contest->materia)]) ?>
+								</div>
                             </div>
                         </li>
 
@@ -50,6 +48,7 @@
 
                 </div>
             </div>
+				<?= $this->Html->link(('Concurso nuevo'), ['action' => 'add'], ['class' => 'btn btn-success center-block col-sm-2']) ?>
         </div>
     </div>
 </div>

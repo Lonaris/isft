@@ -4,12 +4,12 @@
  * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
  */
 ?>
-<div class="breadcrumb">
+<div class="breadcrumb col-sm-8 center-block">
 	<h2>Usuarios</h2>
 </div>
 <div id="usuarios" class="container">
     <div class="row">
-        <div class="col-xs-10" style="">
+        <div class="col-xs-12">
             <div class="panel panel-default list-group-panel">
                 <div class="panel-body">
 
@@ -19,7 +19,7 @@
                                 <div class="col-xs-2"><?= $this->Paginator->sort('username', 'Nombre de usuario') ?></div>
                                 <div class="col-xs-2"><?= $this->Paginator->sort('email', 'Email') ?></div>
                                 <div class="col-xs-2"><?= $this->Paginator->sort('first_name', 'Nombre') ?></div>
-                                <div class="col-xs-2"><?= $this->Paginator->sort('last_name', 'Apellido') ?></div>
+                                <div class="col-xs-4"><?= $this->Paginator->sort('last_name', 'Apellido') ?></div>
                                 <div class="col-xs-2">Acciones</div>
                             </div>
                         </li>
@@ -32,7 +32,7 @@
                                 <div class="col-xs-2" style=""><?= h($user->username) ?></div>
                                 <div class="col-xs-2" style=""><?= h($user->email) ?></div>
                                 <div class="col-xs-2" style=""><?= h($user->first_name) ?></div>
-                                <div class="col-xs-2" style=""><?= h($user->last_name) ?></div>
+                                <div class="col-xs-4" style=""><?= h($user->last_name) ?></div>
 				<div class="col-xs-2" style="">
                     <?= $this->Html->link(__('Ver'), ['action' => 'view', $user->id]) ?>
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $user->id]) ?>
@@ -48,11 +48,10 @@
 
                 </div>
             </div>
+				<?= $this->Html->link(('Usuario nuevo'), ['action' => 'add'], ['class' => 'btn btn-success center-block col-sm-2']) ?>
         </div>
     </div>
 </div>
-
-
 
     <div class="paginator">
         <ul class="pagination">

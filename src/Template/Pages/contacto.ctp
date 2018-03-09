@@ -1,5 +1,5 @@
-	<div class="breadcrumb">
-		<h2>Contacto</h2>
+	<div class="breadcrumb col-sm-8 center-block">
+		<h2>Ubicación</h2>
 	</div>
 	
 	<div class="map">

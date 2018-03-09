@@ -32,38 +32,7 @@
 
 	<?= $this->element('header') ?>
     <?= $this->Flash->render() ?>
-    <div class="navbar-nav navbar-sidenav">
-    	<div class="col-sm-3">
-	    	<ul class="nav" role="tablist">
-        		<li role="" class="">
-					<?= $this->Html->link(__('Visitar Sitio'), '/' ) ?>
-				</li>
-			    <li role="presentation" class="brand-nav">
-					<?= $this->Html->link(__('Publicaciones'), ['controller' => 'posts', 'action' => 'index']) ?>
-				</li>
-			    <li role="presentation" class="brand-nav">
-					<?= $this->Html->link(__('Usuarios'), ['controller' => 'users', 'action' => 'index']) ?>
-				</li>
-			    <li role="presentation" class="brand-nav">
-					<?= $this->Html->link(__('Concursos'), ['controller' => 'contests', 'action' => 'index']) ?>
-				</li>
-			    <li role="presentation" class="brand-nav">
-					<?= $this->Html->link(__('Salir'), ['controller' => 'users', 'action' => 'logout']) ?>
-				</li>
-			</ul>
-		</div>
-	</div>
-	
-	<div class="container-fluid">
-		<div class="row">
-			<nav class="col-md-3 collapse show" id="sidebar">
-				<h2>I'm a sidebar"</h2>
-			</nav>
-			<main class="col-md-9">
-				<i class="fa fa-times" data-toggle="collapse" data-target="#sidebar" aria-hidden="true"></i>
-			</main>
-		</div>
-	</div>
+	<?= $this->element('sidebar2') ?>	
 
     <?= $this->fetch('content') ?>
 	<?= $this->element('footer') ?>

@@ -13,7 +13,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-	<div class="breadcrumb">
+	<div class="breadcrumb col-sm-8 center-block">
 		<h2>Ingreso</h2>
 	</div>
 	<div id="login" class="container">
@@ -47,6 +47,7 @@
 											</div>
 										</div>
 									</div>
+<!--
 									<div class="form-group">
 										<div class="row">
 											<div class="col-lg-12">
@@ -56,6 +57,7 @@
 											</div>
 										</div>
 									</div>
+-->
 <?= $this->Form->end() ?>
 							</div>
 						</div>

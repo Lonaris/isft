@@ -62,8 +62,8 @@ class UsersTable extends Table
         $validator
             ->scalar('password_salt')
             ->maxLength('password_salt', 40)
-            ->requirePresence('password_salt', 'create')
-            ->notEmpty('password_salt');
+            ->requirePresence('password_salt', 'false')
+            ->allowEmpty('password_salt', 'true');
 
         $validator
             ->email('email')

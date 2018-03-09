@@ -42,7 +42,7 @@ class PagesController extends AppController
     {
 	$this->loadModel('Posts');
 //	$posts = $this->Posts->find('all');
-	$posts = $this->paginate($this->Posts);
+	$posts = $this->paginate($this->Posts, ['limit' => 5, 'order' => ['Posts.created' => 'desc']]);
 	foreach ($posts as $post)
 	{
 	    $author_name = $this->Posts->Users->get($post->author, $options = ['fields' => 'username']);

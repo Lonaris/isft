@@ -1,5 +1,5 @@
 
-  	<div class="breadcrumb">
+  	<div class="breadcrumb col-sm-8 center-block">
 		<h2>Historia</h2>
 	</div>
 

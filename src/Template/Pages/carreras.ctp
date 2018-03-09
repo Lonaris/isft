@@ -1,4 +1,4 @@
-  	<div class="breadcrumb">
+  	<div class="breadcrumb col-sm-8 center-block">
 		<h2>Carreras</h2>
 	</div>
 

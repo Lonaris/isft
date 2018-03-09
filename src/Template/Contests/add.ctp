@@ -13,6 +13,8 @@
 -->
 
 <div class="container">
+	<div class="row centered-form">
+		<div class="col-xs-12 col-sm-8 col-md-4 col-smoffset-2 col-md-offset-4">
     <?= $this->Form->create($contest) ?>
     <fieldset>
         <legend><?= __('Agregar Concurso') ?></legend>
@@ -25,4 +27,6 @@
     </fieldset>
     <?= $this->Form->button(__('Agregar'), ['class' => 'btn btn-success']) ?>
     <?= $this->Form->end() ?>
+	</div>
+	</div>
 </div>

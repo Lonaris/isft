@@ -74,8 +74,8 @@ use Cake\Network\Exception\NotFoundException;
 
   	<!-- Seccion mas noticias - Bootstrapp -->
 
-	<div class="container">
-		<div class="row blog-row">
+	<div class="container col-center">
+		<div class="row blog-row ">
 		   	<div class="jumbotron">
 				<h1>Mas Noticias</h1>
 			</div>
@@ -85,7 +85,9 @@ use Cake\Network\Exception\NotFoundException;
 		<div class="blog-content bg-white">
 			<h3><?= h($post->title) ?></h3>
 			<?= $post->content ?>
-			<?= $this->Html->link(__('Continuar leyendo...'), ['controller' => 'posts', 'action' => 'view', $post->id]) ?>
+			<div>
+				<?= $this->Html->link(__('Continuar leyendo...'), ['controller' => 'posts', 'action' => 'view', $post->id]) ?>
+			</div>
 			<p><span>Compartir: : 
 			<a href="javascript::;"><i class="fa fa-facebook margin_left10" aria-hidden="true"></i></a>
 			<a href="javascript::;"><i class="fa fa-twitter margin_left10" aria-hidden="true"></i></a>
@@ -95,6 +97,14 @@ use Cake\Network\Exception\NotFoundException;
 		<hr>
 	</div>
 	<?php endforeach; ?>
+
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->next('< ' . __('entradas mas antiguas')) ?>
+            <?= $this->Paginator->prev(__('entradas mas recientes') . ' >') ?>
+        </ul>
+    </div>
+	</div>
 	<script src="https://use.fontawesome.com/1dec14be15.js"></script>
 
 	<!-- Carreras -->
@@ -210,3 +220,4 @@ use Cake\Network\Exception\NotFoundException;
 			</div>
 		</div>
 	</section>
+</div>

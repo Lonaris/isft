@@ -4,14 +4,14 @@
  * @var \App\Model\Entity\Post[]|\Cake\Collection\CollectionInterface $posts
  */
 ?>
-<div class="breadcrumb">
+<div class="breadcrumb col-sm-8 center-block">
 	<h2>Publicaciones</h2>
 </div>
 
 <!-- new shit -->
 <div id="publicaciones" class="container">
     <div class="row">
-        <div class="col-xs-10" style="">
+        <div class="col-sm-12">
             <div class="panel panel-default list-group-panel">
                 <div class="panel-body">
 
@@ -52,6 +52,7 @@
 
                 </div>
             </div>
+				<?= $this->Html->link(('Publicacion nueva'), ['action' => 'add'], ['class' => 'btn btn-success center-block col-sm-2']) ?>
         </div>
     </div>
 </div>

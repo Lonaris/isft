@@ -19,6 +19,8 @@
 </nav>
 -->
 <div class="container cleafix">
+	<div class="row centered-form">
+         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">   
     <?= $this->Form->create($contest) ?>
     <fieldset>
         <legend><?= __('Editar Concurso') ?></legend>
@@ -31,4 +33,6 @@
     </fieldset>
     <?= $this->Form->button(__('Guardar'), ['class' => 'btn btn-success']) ?>
     <?= $this->Form->end() ?>
+	</div>
+	</div>
 </div>
